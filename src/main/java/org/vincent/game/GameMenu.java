@@ -20,7 +20,7 @@ public class GameMenu {
                 WordsCollection.HARD_WORDS.get(playedWords);
 
         //hide words to become underline and system out the result here
-        String playedHiddenWords = WordUtils.hideWords(playedWords, isEasy);
+        String playedHiddenWords = WordUtils.hideWords(playedWords);
 
         System.out.println("Clue: " + clue + ". Remaining attempts: " + remainingAttempt);
         System.out.println(playedHiddenWords);
