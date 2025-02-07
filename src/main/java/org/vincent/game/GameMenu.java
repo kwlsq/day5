@@ -16,7 +16,9 @@ public class GameMenu {
         WordUtils.getRandomizedWord(isEasy);
         String playedWord = WordUtils.getRandomizedWord(isEasy);
 
-        String clue = isEasy ? WordsCollection.EASY_WORDS.get(playedWord) : WordsCollection.HARD_WORDS.get(playedWord);
+        String clue = isEasy ?
+                WordsCollection.EASY_WORDS.get(playedWord) :
+                WordsCollection.HARD_WORDS.get(playedWord);
 
         //hide 2 words to become underline and system out the result here
         WordUtils.hideWords(playedWord,isEasy);
