@@ -48,7 +48,7 @@ public class WordUtils {
 
         for(int i=0;i<word.length();i++){
             if(Character.toString(word.charAt(i)).equals(guess)){
-                hiddenWordSb.replace(i,1,guess);
+                hiddenWordSb.replace(i,i+1,guess);
             }
         }
 
