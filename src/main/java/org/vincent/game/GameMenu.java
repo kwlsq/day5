@@ -28,9 +28,12 @@ public class GameMenu {
 
         //after shown to user
         //get the player 1st guess. compare using a method with inputs of stored selected words
-        String guess = scanner.next();
-//        WordUtils.updateHiddenWords(playedWords,playedHiddenWords,guess);
-        System.out.println(WordUtils.updateHiddenWords(playedWords,playedHiddenWords,guess));
+        do {
+            String guess = scanner.next();
+            System.out.println(WordUtils.updateHiddenWords(playedWords,playedHiddenWords,guess));
+            playedHiddenWords = WordUtils.updateHiddenWords(playedWords,playedHiddenWords,guess);
+        } while (!playedWords.equals(playedHiddenWords));
+
         // and the guessed char.
 
         //update the hidden word with inputs of selected words, hidden words, guessed char
