@@ -1,8 +1,6 @@
 package org.vincent.game;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class WordUtils {
     public static String getRandomizedWord(boolean isEasy) {
@@ -20,15 +18,16 @@ public class WordUtils {
 
     public static String hideWords(String words, boolean isEasy) {
         int totalHiddenWords = isEasy ? 2 : words.length() - 5;
-
         Random random = new Random();
-
         String[] wordsArr = words.split("");
 
-        for (int i = 0; i < totalHiddenWords; i++) {
+        Set<Integer> hiddenIndexes = new HashSet<>();
+
+        while (hiddenIndexes.size() < totalHiddenWords) {
             int randomIndex = random.nextInt(words.length());
-            if (!wordsArr[randomIndex].equals(" ")) {
+            if (!wordsArr[randomIndex].equals(" ") && !hiddenIndexes.contains(randomIndex)) {
                 wordsArr[randomIndex] = "_";
+                hiddenIndexes.add(randomIndex);
             }
         }
         return String.join("", wordsArr);
