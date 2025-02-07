@@ -23,8 +23,7 @@ public class WordUtils {
 
         Random random = new Random();
 
-
-        String[] wordsArr = words.trim().split("");
+        String[] wordsArr = words.split("");
 
         for(int i=0;i<totalHiddenWords;i++){
             int randomIndex = random.nextInt(words.length());
