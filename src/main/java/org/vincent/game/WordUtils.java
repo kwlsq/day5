@@ -17,4 +17,19 @@ public class WordUtils {
 
         return keys.get(random.nextInt(keys.size()));
     }
+
+    public static String hideWords(String words, boolean isEasy){
+        int totalHiddenWords = isEasy ? 2 : words.length() - 5;
+
+        Random random = new Random();
+
+
+        String[] wordsArr = words.trim().split("");
+
+        for(int i=0;i<totalHiddenWords;i++){
+            int randomIndex = random.nextInt(words.length());
+            wordsArr[randomIndex] =  "_";
+        }
+        return String.join("",wordsArr);
+    }
 }
