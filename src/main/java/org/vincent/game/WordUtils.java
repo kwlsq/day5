@@ -27,7 +27,9 @@ public class WordUtils {
 
         for(int i=0;i<totalHiddenWords;i++){
             int randomIndex = random.nextInt(words.length());
-            wordsArr[randomIndex] =  "_";
+            if(!wordsArr[randomIndex].equals(" ")) {
+                wordsArr[randomIndex] =  "_";
+            }
         }
         return String.join("",wordsArr);
     }
