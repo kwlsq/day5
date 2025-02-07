@@ -20,9 +20,9 @@ public class GameMenu {
                 WordsCollection.HARD_WORDS.get(playedWords);
 
         //hide words to become underline and system out the result here
-        String playedHiddenWords = WordUtils.hideWords(playedWords,isEasy);
+        String playedHiddenWords = WordUtils.hideWords(playedWords, isEasy);
 
-        System.out.println("Clue: "+clue + ". Remaining attempts: " + remainingAttempt);
+        System.out.println("Clue: " + clue + ". Remaining attempts: " + remainingAttempt);
         System.out.println(playedHiddenWords);
 
         //after shown to user
@@ -30,7 +30,7 @@ public class GameMenu {
         do {
             String guess = scanner.next();
 
-            playedHiddenWords = WordUtils.updateHiddenWords(playedWords,playedHiddenWords,guess);
+            playedHiddenWords = WordUtils.updateHiddenWords(playedWords, playedHiddenWords, guess);
             System.out.println(playedHiddenWords +
                     " | " + remainingAttempt + " remaining attempts.");
 
@@ -38,10 +38,10 @@ public class GameMenu {
         } while (!playedWords.equals(playedHiddenWords) && remainingAttempt != 0);
 
         if (remainingAttempt == 0) {
-            System.out.println("You lose! The word is: "+playedWords);
+            System.out.println("You lose! The word is: " + playedWords);
         } else {
-            System.out.println("Congratulations! you guessed the word '"+
-                    playedWords+ "' with " + remainingAttempt + " remaining attempts!");
+            System.out.println("Congratulations! you guessed the word '" +
+                    playedWords + "' with " + remainingAttempt + " remaining attempts!");
         }
     }
 }
